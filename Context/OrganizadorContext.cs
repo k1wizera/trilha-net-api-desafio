@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
 using TrilhaApiDesafio.Models;
 
 namespace TrilhaApiDesafio.Context
@@ -7,7 +8,7 @@ namespace TrilhaApiDesafio.Context
     {
         public OrganizadorContext(DbContextOptions<OrganizadorContext> options) : base(options)
         {
-            
+            Database.EnsureCreated();
         }
 
         public DbSet<Tarefa> Tarefas { get; set; }
